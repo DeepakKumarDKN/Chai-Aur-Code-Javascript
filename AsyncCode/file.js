@@ -1,0 +1,85 @@
+// Javascript is a Synchronous single threaded programming language 
+// Executing Line One By One after completing one goes to the second one
+
+
+// Two types of Code are being written in Javascript.
+
+// Blocking Code : Block the flow of the program 
+// Non Blocking Code : doesnot block execution 
+
+// Explanation 
+
+// javascript is a synchronous single threaded programming language it has onyl one callstack and 
+// and it can only do one thing at a time, the callstack is present inside the Javascript Engine and
+// the javascript engine is present inside the Browser.
+
+// Normal Execution of a program
+function a(){
+    // console.log('a')
+}
+a()
+// console.log('End') 
+
+// Whenever any javascript program is run a global execution context is created and this global
+// execution context is pushed into the call stack 
+
+// function a will be allocated memory 
+// execution context will be created for function a
+// and then it will be pushed into the call stack 
+// after execution over the a's execution context popped out of the task.
+// and then console.log('End') will get printed.
+
+// Now lets c what if we need to wait for something, whatif there is a program 
+// and the script needs to wait for 5sec or 7 sec.
+
+// * setTimeout
+// * setInterval
+// * DOM
+// * fetch
+// * console 
+
+// all these are not the part of pure javascript all these are belong to 
+// browsers so lets c now how does it will behave.
+
+console.log('start');
+setTimeout(()=>{
+    console.log('callback')
+},5000)
+console.log('End')
+
+//Explanation 
+// as i said whenever a progran will run the execution context is created,
+// and it will be pushed into the stack
+
+// when the control will come to line number 43 start will be printed inside the console.
+// and then it takes the callback function which is a delay of 5 secs, and this 
+// function will execute after 5secs 
+
+// but as we know that javascript waits for none immediatley the control will come to 
+// line number 48 and 'End' will be printed it to the console and in between 
+// the 5sec is over and now the control will come to line number 46 and 
+// 'callback' will be printed to the console
+
+// but one more thing this is where the eventLoop and callback queue will come into action 
+// because the callback is something which directly cannot go inside the callstack 
+// it will go to the callsstack nodoubt but through callback queue 
+
+// and this is the work of event loop that he will see whether there is any callback 
+// present inside the callback queue or not because as soon as the timer expire the 
+// calback function will move to the callback queue.
+
+// if the event loops find any callback function inside the callback queue then it will 
+// push that function to the callstack
+
+
+// Output
+
+start
+End
+callback
+
+
+
+
+
+
