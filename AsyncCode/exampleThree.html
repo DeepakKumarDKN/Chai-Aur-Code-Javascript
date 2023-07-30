@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+    *{
+        margin:0;
+        padding:0;
+        background-color: rgb(53, 52, 52);
+    }
+    body{
+        max-width: 1400px;
+        margin: 0 auto;
+        margin-top: 10px;
+    }
+    .list-items{
+        display:flex;
+        padding: 10px;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+
+    }
+    .list-items li{
+        list-style-type: none;
+        font-family: Poppins;
+        color: white;
+    }
+    h2{
+        font-family: Poppins;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 10px;
+    }
+    .btns{
+        display:flex;
+        justify-content: center;
+        gap: 1rem;
+    }
+    .start-btn, .end-btn{
+        padding: 5px 20px;
+        border: 1px solid white;;
+        background-color: rgb(54, 50, 50);;
+        color: white;
+        cursor: pointer;
+    }
+    .start-btn:hover, .end-btn:hover{
+        background-color: transparent;
+        border: 2px solid white;
+    }
+
+   
+    
+</style>
+<body>
+    <navbar class="navbar-container">
+        <ul class="list-items">
+            <li>Home</li>
+            <li>Youtube Channel</li>
+        </ul>
+    </navbar>
+    <h2>Background color should be change every second </h2>
+    <div class="btns">
+        <Button class="start-btn">Start</Button>
+        <Button class="end-btn">End</Button>
+    </div>
+    <script>
+        const randomColor = function(){
+            const hex = '0123456789ABCDEF'
+            let color = "#";
+            for(let i =0; i<6; i++){
+                color += hex[Math.floor(Math.random() * 16)]
+            }
+            return color;
+        }
+        console.log(randomColor())
+
+        b 
+
+        document.querySelector('start-btn')
+        .addEventListener('click', startChangingColor)
+
+        document.querySelector('end-btn')
+        .addEventListener('click', stopChangingColor)
+
+    </script>
+</body>
+</html>

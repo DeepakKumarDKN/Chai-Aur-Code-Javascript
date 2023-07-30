@@ -11,11 +11,21 @@
     <button id="stop">Stop Button</button>
 </body>
 <script>
-   const printName = function(){
+  let setid;
+  function printName(){
     console.log('Deepak Kumar Nayak')
-   }
-   
-    
+  }
+  
+  const startbtn = document.getElementById('start')
+  const stopbtn = document.getElementById('stop')
+
+   startbtn.addEventListener('click', function(){
+    setid = setInterval(printName, 1000)
+   })
+
+   stopbtn.addEventListener('click', function(){
+    clearInterval(setid)
+   })
 
 </script>
 </html>

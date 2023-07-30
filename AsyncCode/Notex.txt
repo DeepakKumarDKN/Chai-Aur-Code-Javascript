@@ -84,3 +84,7 @@ callback
 
 
 
+Notes:
+-----
+setTimeout will run only once.
+setInterval wil run multiple times.
