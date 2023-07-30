@@ -35,6 +35,7 @@
         display: flex;
         justify-content: center;
         margin-bottom: 10px;
+        color:rgb(132, 129, 125)
     }
     .btns{
         display:flex;
@@ -59,8 +60,8 @@
 <body>
     <navbar class="navbar-container">
         <ul class="list-items">
-            <li>Home</li>
-            <li>Youtube Channel</li>
+            <li>Chai Aur Code</li>
+            <li>Background Change Project</li>
         </ul>
     </navbar>
     <h2>Background color should be change every second </h2>
@@ -82,10 +83,14 @@
             function ChangebgColor(){
                 document.body.style.backgroundColor = randomColor()
             }
-            intervalId = setInterval(ChangebgColor, 1000)
+            if(!intervalId){
+                intervalId = setInterval(ChangebgColor, 1000)
+            }
+            
         }
         const stopChangingColor = function(){
             clearInterval(intervalId)
+            intervalId = null;
         }
 
 

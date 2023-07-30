@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KeyBoard Check Project</title>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+    *{
+        margin:0;
+        padding:0;
+    }
+    
+    .list-items{
+        display:flex;
+        justify-content: center;
+        gap: 1rem;
+        width: 100%;
+        padding: 1rem;
+        background-color: black;
+        color:white;
+        font-family: "Poppins";
+    }
+    .list-items li{
+        list-style-type: none;
+        border: 1px solid white;
+        padding: 5px;
+    }
+    .project{
+        height: 100vh;
+        background-color: rgb(49, 49, 39);
+        color:white;
+        font-family: "Poppins";
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        
+    }
+    #insert{
+        display:flex;
+        gap: 10px;
+        border: 1px solid white;
+        padding: 10px;
+    }
+</style>
+<body>
+
+    <navbar>
+        <ul class="list-items">
+            <li>Chai Aur Code</li>
+            <li>Keyboard Check Project</li>
+        </ul>
+    </navbar>
+
+    <div class="project">
+        <div id="insert">
+            <div class="key">Press any key on the keyboard</div>
+        </div>
+    </div>
+
+    <script>
+        const insert = document.querySelector('#insert')
+        
+        window.addEventListener('keydown', (e)=>{
+            insert.innerHTML = `
+                <p>Key: ${e.key}</p>
+                <p>KeyCode: ${e.keyCode}</p>
+                <p>Code: ${e.code}</p>
+
+            `
+        })
+    </script>
+</body>
+</html>
