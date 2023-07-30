@@ -10,12 +10,12 @@
     *{
         margin:0;
         padding:0;
-        background-color: rgb(53, 52, 52);
     }
     body{
         max-width: 1400px;
         margin: 0 auto;
         margin-top: 10px;
+        background-color: rgb(53, 52, 52);
     }
     .list-items{
         display:flex;
@@ -77,15 +77,24 @@
             }
             return color;
         }
-        console.log(randomColor())
+        let intervalId;
+        const startChangingColor = function(){
+            function ChangebgColor(){
+                document.body.style.backgroundColor = randomColor()
+            }
+            intervalId = setInterval(ChangebgColor, 1000)
+        }
+        const stopChangingColor = function(){
+            clearInterval(intervalId)
+        }
 
 
-        document.querySelector('start-btn')
+        document.querySelector('.start-btn')
         .addEventListener('click', startChangingColor)
 
-        document.querySelector('end-btn')
+        document.querySelector('.end-btn')
         .addEventListener('click', stopChangingColor)
 
     </script>
 </body>
-</html>
+</html> 
