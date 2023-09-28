@@ -1,0 +1,21 @@
+Javascript Classes 
+-------------------
+- object is a collection of properties and methods
+- properties :- variable name etc etc 
+- methods means functions.
+
+Parts Of OOPS: 
+-------------
+- constructor function 
+- prototypes
+- Instances (new, this)
+
+const user = {
+    username : 'deepak',
+    fullname : 'deepak kumar nayak',
+    email : 'deepak@gmail.com',
+
+    getUsername : function(){
+        conole.log(this.username)
+    }
+}
