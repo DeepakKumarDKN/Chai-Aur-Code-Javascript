@@ -19,3 +19,21 @@ const user = {
         conole.log(this.username)
     }
 }
+
+prototype
+---------
+- prototype is present only in function.
+- proto and prototype both are diffrent things.
+- prototype is an object and empty object which we get because of function 
+- we can also use that empty object.
+- proto is a reference
+
+
+function hello(){
+    console.log('hello')
+}
+
+hello.prototype.abc = "abc"
+hello.prototype.name = function(){
+    console.log('name')
+}

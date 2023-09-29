@@ -48,3 +48,16 @@ function createUser(name,fullname,gmail,city){
 
 // const userOne = new createUser('deepak','deepak kumar nayak','deepak@gmail.com','Kolkata')
 // console.log(userOne.__proto__)
+
+// prototype and new keyword
+
+function hello(){
+    console.log('hello')
+}
+
+hello.prototype.abc = "abc"
+hello.prototype.name = function(){
+    return 'name'
+}
+
+console.log(hello.prototype.name())
