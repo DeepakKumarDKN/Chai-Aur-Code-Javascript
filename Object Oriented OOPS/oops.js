@@ -60,4 +60,22 @@ hello.prototype.name = function(){
     return 'name'
 }
 
-console.log(hello.prototype.name())
+//console.log(hello.prototype.name())
+
+const user1 = {
+    fistname : "deepak",
+    age : 8,
+    about : function(city,areaName){
+        console.log(`Employee name is ${this.firstname}
+        and he is from ${city} area name is ${areaName}`)
+    }
+}
+
+
+const user2 = {
+    firstname : 'mohit kumar',
+    age : 9
+}
+
+// user1.about.call(user2,['Kolkata','Banerjee para Road'])
+user1.about.apply(user2,['Kolkata','Banerjee para Road'])

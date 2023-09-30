@@ -1,3 +1,66 @@
+this in javascript 
+-------------------
+In global context this refers to the global object for example in a browser 
+this refers to the window or global object.
+
+console.log(this === window) # true
+
+suppose if we assign any property to this object in the global context 
+Javascript will add it to the Window object
+
+this.name = "Deepak"
+console.log(window.name) # i can also access it using window
+
+
+const user1 = {
+    fistname : "deepak",
+    age : 8,
+    about : function(){
+        console.log(this.firstname)
+    }
+}
+
+
+const user2 = {
+    firstname : 'mohit kumar',
+    age : 9
+}
+
+# so here i can still call about for user 2 with the help of call method
+user1.about.call(user2)
+
+Output
+------
+Mohit Kumar
+
+Note:
+-----
+call will always take comma separated arguments (look atthe below example)
+objectname.apply(thisArg,arrayOfarguments)
+
+apply with always take an array of arguments
+
+- Example:
+-----------
+
+const user1 = {
+    fistname : "deepak",
+    age : 8,
+    about : function(city,areaName){
+        console.log(`Employee name is ${this.firstname}
+        and he is from ${city} area name is ${areaName}`)
+    }
+}
+
+
+const user2 = {
+    firstname : 'mohit kumar',
+    age : 9
+}
+
+user1.about.call(user2, 'Kolkata','Banerjee para Road')
+user1.about.apply(user2,['Kolkata','Banerjee para Road'])
+
 Javascript Classes 
 -------------------
 - object is a collection of properties and methods
@@ -37,3 +100,8 @@ hello.prototype.abc = "abc"
 hello.prototype.name = function(){
     console.log('name')
 }
+
+new Keyword 
+------------
+new keyword creats an empty object for us. 
+bind the newely created object to the prototype of the constructor function 
