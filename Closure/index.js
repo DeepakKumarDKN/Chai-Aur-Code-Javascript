@@ -20,8 +20,17 @@
 // const result = printFullName('deepak kumar','nayak')
 // console.log(result)
 
-function printFullName(){
-    console.log('hello')
+// function printFullName(){
+//     console.log('hello')
+// }
+
+// printFullName()
+
+const a = 20
+
+function accessing(){
+    console.log(a)
 }
 
-printFullName()
+accessing()
+
