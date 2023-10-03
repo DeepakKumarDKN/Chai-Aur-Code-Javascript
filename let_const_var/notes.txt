@@ -1,0 +1,43 @@
+if we are declaring something using var keyword then its scope is defined as funcion scoped
+if we are declaring something using let and const then its scope is defined as blocked scope.
+
+no need of using var its better to use let and const. 
+
+
+VAR => : 
+-----------
+var name = "deepak"
+name ="deepak kumar nayak"
+console.log(name)
+
+Output 
+deepak kumar nayak
+
+with the help of var we can update it as well as we cav redclare it 
+
+var fulname = "deepak"
+var fulname = "deepak kumar"
+
+console.log(fulname)
+
+so here i am re-declaring it with var
+
+LET => : 
+---------
+
+let courseName = "javascript"
+courseName = "chai are code"
+console.log(courseName)
+
+so let also allows us to updare it but it will never all us to re declare it just like var.
+in case of let ot will give is a syntax error: 
+SyntaxError: Identifier 'isLogin' has already been declared
+let isLogin = true;
+let isLogin = true
+
+const
+------
+If we want to define something throught out the program which value we dont want to change then 
+we can use const for that. 
+
+const will never allow us to re-declare it and will also never allow us to updare it.
