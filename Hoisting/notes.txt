@@ -69,3 +69,5 @@ var getName = () => {
 }
 
 so here also we wil get undefined just like it allocate undefied to x, see pictureThree
+
+----------------------------------------------------------------------------------------------------------------------------------------

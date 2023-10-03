@@ -35,9 +35,24 @@ SyntaxError: Identifier 'isLogin' has already been declared
 let isLogin = true;
 let isLogin = true
 
+- in Case of let i can only do the declaration and i can initialize it later for example : 
+let a;      # here i am only declaring it
+a = 10      # here i am initializing it.
+
 const
 ------
 If we want to define something throught out the program which value we dont want to change then 
 we can use const for that. 
 
 const will never allow us to re-declare it and will also never allow us to updare it.
+
+with const we can never update it as we used to do with let and var if we do then we will get an
+"TypeError as Assignment to const variable"
+
+
+- 
+in cont we cannot leave it only by declaring as i have done in let see line number 39 there i have only declared it, but 
+cont will not allow us to do that in cost we have to initialize it 
+
+const a; # this is wrong we will get an error that missing initializer in const declaration
+const a = 10 ; # this is what we have to do.
