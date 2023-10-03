@@ -1,0 +1,71 @@
+Hoisting:
+---------
+Hoisting is something in which we can acess something even befoe initializing to it
+So it is the phonomena in Javascipt by which we can access some variables and functions in javascript 
+even before initializing any value to it.
+
+
+
+getName()
+console.log(x)
+console.log(getName)
+var x = 7 
+
+function getName(){
+    console.log('Chai aur code with Javascript')
+}
+
+
+suppose if i try to access the value of x here so what i am doing it here i am trying to acess it even before 
+initliazing any value to it so here i will get undefined 
+
+but if in casee of function i will get the output as "Chai aur code with Javascript"
+-
+so here it is behaving very diffrently in case of var as compared to the fuunction let us find out 
+why it is behaving diffrently. 
+
+why are are getting undefined for the variable and why we are getting proper output for function,
+- 
+as we all know whenever a program is executed an execution context is created and it is divided into two
+phase one is meomory creation phase and other one is code execution phase.
+
+so in the meory creation phase even before the code starts executing the memory is allocated to functions and
+variables.
+
+Look a the pictureOne: 
+------------------------
+here we can seee that the value of x in set to undefined here yes thats a special keyword so een before our code gets executed 
+javascript sets the value of x with undefined 
+
+look at picture Two
+---------------------
+here you can see that in case of function the whole code of the function is getting saved here.
+
+- but what will happen if i will write the code like this :
+
+getName()
+console.log(x)
+console.log(getName)
+ 
+
+function getName(){
+    console.log('Chai aur code with Javascript')
+}
+
+-
+so what i am dong here in the above code i am not using x but i want to access it without even declaring it so hee i will get an error like 
+Error:=> "Uncaught reference error that  x is not defined"
+
+- 
+But what will happen if i try to save the function into an variable.
+
+getName()
+console.log(x)
+console.log(getName)
+
+var x = 10 
+var getName = () => {
+    console.log('Chai aur code with Javascript')
+}
+
+so here also we wil get undefined just like it allocate undefied to x, see pictureThree
