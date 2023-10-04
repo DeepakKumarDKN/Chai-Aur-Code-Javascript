@@ -1,9 +1,3 @@
-function isLogin(){
-    if(isLogin){
-        var name  = "deepak"
-        var position = "FullStack Developer"
-    }
-    console.log(`${name} working as a ${position}` )
-}
-
-isLogin(true)
+console.log(a)
+let a = 10
+var b = 20

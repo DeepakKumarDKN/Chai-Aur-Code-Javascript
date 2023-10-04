@@ -56,3 +56,57 @@ cont will not allow us to do that in cost we have to initialize it
 
 const a; # this is wrong we will get an error that missing initializer in const declaration
 const a = 10 ; # this is what we have to do.
+
+
+---
+let, var and const behave very diffrently during hoisting
+
+    console.log(b)
+    conosole.log(a)
+    let a = 10 
+    var b = 20
+
+- The most important Point is Let and Const are also hoisted just like VAR But it is being hoisted diffrently
+- even before the single line of code is executed the memory is allocated to var and let. 
+
+- here i am trying to access b, yes we can access it here and we will not get any error as well but 
+    we will get a special value called undefined.
+
+- but if i try to access a then we will get an error here.
+    error Reference Error cannot accces a before initialization
+
+- we can see that the variable b is attacted to Global object and the the variable  a (let and const)
+    is inside the Script Tag javascript will allocate memory to a as well as to b and the value which 
+    is being assigned to it is undefined.
+
+    so from this one thing is pretty clear that the let and const are also bueng hoisted but they are being stored in a
+    in a diffrent momory space than global
+
+Temporal Dead Zone
+-------------------
+The time since when the variable was hoisted and till its get the value so the amount of time 
+being taken is known as the Temporal Dead Zone.
+
+for example: 
+-----------
+console.log(a)
+let a = 10 
+
+so here i am trying to access the value defined with let so what will happen here a will be hoisted and memory 
+will also be allocated to them the variable a will be inside the Script tag with a special value called undefined 
+so here the temporal dead zone will start and when it will end till its get the value 10 as soon as its gets the value
+1o inside it instead of undefined at that particular time Temporal Dead Zone will end 
+
+so whenever we try to acces a variable inside the Temporal Dead Zone its gives us a Reference Error that cannot access a
+before initialization and can only be accessed when some value get initialized to them 
+
+Note:
+-----
+- for b we will get undefined 
+- for a we will get reference error cannot access a before initialization 
+- Why we get undefined because memory was allocated but the initialization is not done
+    so we get an special keyword/placeholder called 
+
+- we can access the value of b in the browser by writting (var a = 10) window.b because they are attatched to
+window object but we cannot acces the variables wich are declared with let and const because they are stored in
+a diffrent space and that is not the global space and we will get undefined there.
