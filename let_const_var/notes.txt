@@ -105,7 +105,7 @@ Note:
 - for b we will get undefined 
 - for a we will get reference error cannot access a before initialization 
 - Why we get undefined because memory was allocated but the initialization is not done
-    so we get an special keyword/placeholder called 
+    so we get an special keyword/placeholder called undefined
 
 - we can access the value of b in the browser by writting (var a = 10) window.b because they are attatched to
 window object but we cannot acces the variables wich are declared with let and const because they are stored in
