@@ -1,0 +1,112 @@
+Lexical Environment: 
+--------------------
+Lexical environment is local memory along with the lexical environment of its parent.
+
+function name(){
+    console.log(username)
+}
+
+let username = "deepak"
+name()
+
+- so here javascript will try to find out the username present in local memory space or not 
+local memory mean inside the function name. 
+
+- in this example it is not there inside the function because we haven't created it inside the functiion 
+    so what will happen now will it print undefined, no no it will print "deepak"
+
+- so we are getting the username so somehow it can access the username which is outside the function
+
+Example No.2
+-------------
+
+function name(){
+    function getuserName(){
+        console.log(username)
+    }
+    getuserName()
+}
+
+let username = "deepak"
+name()
+
+- so now what will happen , can i still acess username which is inside nested function 
+- so yes now also i can acccess it 
+- so the valye i hae declared it in the global scope but still i can access it. 
+
+Example No.3
+-------------
+
+so what will haoenn if i will declare username inside the name function for example
+function name(){
+    let username = "deepak"
+    function getuserName(){
+        console.log(username)
+    }
+    getuserName()
+}
+name()
+
+- so yes here also i can access it. 
+
+Example No.4
+-------------
+function name(){
+    let username = "deepak"
+    function getuserName(){
+    }
+    getuserName()
+}
+
+console.log(username)
+name()
+
+- here we will get error that username is not defined
+- so i cannot access something which is inside th block scope. 
+- yes here deepak is inside the function scope 
+- if i would have defined using var also that doesn't matter
+    because still then also i will no be able to access it.
+
+Example 5:
+-----------
+function name(){
+    let username = "deepak"
+    function getuserName(){
+        console.log(username)
+    }
+    getuserName()
+}
+
+name()
+
+Explanation =>
+------------------
+- as we all know that when javascriop runs the code a global execution context is created and it is pushed it into the stack.
+- and it will try to assign value to the global variables and functions, i havnt declared any variable so it will try to assign 
+    memory to the function, now here there is a function so the whole function will be stored inside it.
+
+- now it will envoke the name function and a function execution context will start which is again divided into two parts.
+    1. memory pahase.
+    2. code Execution phase
+
+    in the memory phase it will allocate memory to the username with a special value called undefined
+    and in code phase it will replace that value undefined with "deepak"
+
+    where as in a function is also there called getuserName and the funcd..ction will also allocated some memory in the meory phase.
+
+- now again as we know there is a function so again a execution context will get started for getuserName. 
+
+- so when the program gets executed a Lexical Environment also gets executed, Lexical Environment is the local memory along with
+the Lexical Environment of its parent. so it will be pointing out to the Lexical Evrionment of its parent which is name function in this example 
+and it cal also acess everything which is inside the Lexical Environment of its parent.
+
+- here getuserName is lexically sitting inside name function why i am saying lexically because lexical mean where that particular code is 
+present and in this example getuserName is lexicaly inside the name function and name is sitting lexically inisde the global function.
+
+- in the getuserName i am trying to access username so first of all it will try to find out in the local memory of getuserName and it will not find
+because i havent declared any variable inside the getuserName function, then it will try to find out in the lexical enviroment of getuserName which is name function 
+and it will find the value there but supoose if there is also not present then again it will try to find out in the lexical enviroment of name parent which is global 
+Lexical Environment and if the value is there then it will prints out the value if not there then again it will go to the Global Lexical Environment Parent which 
+is basically null that means there is no more Lexical Environment to search for and the program stops its ends there we will get the result that it is not defined. 
+
+so we have moved from one Lexical Environment to other, so this mechanism for finding the variable from one Lexical Environment to other is known as Scope Chaining.
