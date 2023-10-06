@@ -84,20 +84,20 @@
 //Q. what if the outer function is nested with some other function will still now the inner funtion has access to that function also
 
 
-function parent(){
-    let middleName = "kumar"
-    function outer(surname){
-        let name = "deepak"
-        function inner(){
-            console.log(name)
-            console.log(middleName)
-            console.log(surname)
-        }
-        return inner
+// function parent(){
+//     let middleName = "kumar"
+//     function outer(surname){
+//         let name = "deepak"
+//         function inner(){
+//             console.log(name)
+//             console.log(middleName)
+//             console.log(surname)
+//         }
+//         return inner
         
-    }
-    return outer
-}
+//     }
+//     return outer
+// }
 //let name = "rahul"
 
 // const close = parent()
@@ -117,17 +117,28 @@ function parent(){
 
 // data hiding mean supoose we have a variable and we dont want other functions to get access of it that is known as data hiding.
 
-function Counter(){
-    let count = 0 
-    function incrementCounter(){
-        count++
-        console.log(count)
+// function Counter(){
+//     let count = 0 
+//     function incrementCounter(){
+//         count++
+//         console.log(count)
     
-    }
-    return incrementCounter
+//     }
+//     return incrementCounter
+// }
+
+// const result = Counter()
+// result()
+// result()
+
+
+var name = "deepak"
+let middleName = "kumar"
+let surname = "nayak"
+
+function getFullName(){
+    const position = "fullstack developer"
+    console.log(`${name} ${middleName} ${surname} and working as a ${position}`)
 }
 
-const result = Counter()
-result()
-result()
-
+getFullName()

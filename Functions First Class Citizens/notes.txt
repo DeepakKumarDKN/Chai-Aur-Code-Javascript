@@ -1,0 +1,40 @@
+Why functions are said to be first class Citizens.? 
+    - supoose we have a function and if we can treat that function as a
+        variable than that functions are said to be first class citizens. 
+        storing it on a variable. 
+    
+    1. yes in javascript we can assign a funtion to a variable. lets get into an example: 
+    
+    -Example:
+
+        const getuserName = function(){
+            console.log('username')
+        }
+
+        getuserName()
+
+    2. passing function as an argument to the functions, and when we pass a function as an argument to another function 
+        we call them as call back function.
+
+    - Example:
+
+        const myName = function(){
+            return "hello"
+        }
+
+        const getuserName = function(name, firstname){
+            console.log(name(),firstname)
+        }
+
+        getuserName(myName, 'Deepak')
+    
+    3. One funtion can return another function
+
+    - Example:
+
+    function display(){
+    return function userName(){
+        console.log('username')
+        }
+    }
+    display()()
