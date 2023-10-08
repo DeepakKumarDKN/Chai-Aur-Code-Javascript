@@ -1,2 +1,13 @@
 Promises are used to handle asynchronous operation.
- 
+
+Promises consist of 3 Stages. 
+    1. Pending.
+    2. fulfill/resolve => when promises get fulfilled.
+    3. reject
+
+
+    promise is created using a new keyword with a executor function.
+
+    const obj1 = new Promise((resolve,reject) => {
+        
+    })
