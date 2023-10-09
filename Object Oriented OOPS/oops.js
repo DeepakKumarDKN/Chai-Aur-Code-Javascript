@@ -31,7 +31,7 @@
 
 const userData = {
     about:function(){
-        console.log(this.fullname)
+        //console.log(this.fullname)
     }
 }
 
@@ -66,8 +66,8 @@ const user1 = {
     fistname : "deepak",
     age : 8,
     about : function(city,areaName){
-        console.log(`Employee name is ${this.firstname}
-        and he is from ${city} area name is ${areaName}`)
+        //console.log(`Employee name is ${this.firstname}
+        //and he is from ${city} area name is ${areaName}`)
     }
 }
 
@@ -79,3 +79,16 @@ const user2 = {
 
 // user1.about.call(user2,['Kolkata','Banerjee para Road'])
 user1.about.apply(user2,['Kolkata','Banerjee para Road'])
+
+
+function helloUser(){
+    console.log('hello')
+}
+
+helloUser.prototype.username = "deepak"
+helloUser.prototype.email = "deepak@gmail.com"
+helloUser.prototype.working = "fullstack developer"
+
+helloUser()
+
+console.log(helloUser.prototype)
