@@ -140,7 +140,7 @@ async function consumePromise(){
     }
     
 }
-consumePromise()
+//consumePromise()
 
 // Fetch 
 // The fetch API Provides a fetch method and it returns a promise
@@ -149,14 +149,21 @@ async function getallUsers(){
     try{
         const response = await fetch('https://jsonplaceholder.typicode.com/users')
         const data = await response.json()
-        console.log(data)
+        //console.log(data)
     }catch(err){
-        console.log(err)
+        //console.log(err)
     }
 
     
 }
 
-getallUsers()
+//getallUsers()
 
+// writting fetch with the help of then and catch
+// here there is no need os using await// and async
 
+fetch('https://jsonplaceholder.typicode.com/users')
+.then((response)=>{
+    return response.json()
+}).then((data)=>{console.log(data)
+}).catch((error)=> console.log(error))
