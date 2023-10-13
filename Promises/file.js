@@ -162,8 +162,23 @@ async function getallUsers(){
 // writting fetch with the help of then and catch
 // here there is no need os using await// and async
 
-fetch('https://jsonplaceholder.typicode.com/users')
-.then((response)=>{
-    return response.json()
-}).then((data)=>{console.log(data)
-}).catch((error)=> console.log(error))
+// fetch('https://jsonplaceholder.typicode.com/users')
+// .then((response)=>{
+//     return response.json()
+// }).then((data)=>{console.log(data)
+// }).catch((error)=> console.log(error))
+
+
+//InterView Questions
+
+// Promise Object is a place holder which will be filled later with a value
+// Promise i s a placeholder for a certain period of time until we get a 
+// a value from a async operation
+
+// promise is a container for a feature value which we wll get after it get resolved
+// promise is an object representing eventual completion or a failure of a 
+// asynchronous operation
+
+// promise comes with an impotant feature called promise chaining which help us in 
+// handling the callback hell or to get rid from callback hell.
+
